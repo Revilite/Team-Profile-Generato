@@ -4,6 +4,7 @@ const Intern = require('./lib/Intern');
 const inquirer = require("inquirer")
 const fs = require("fs");
 const gen = require("./src/page-template.js");
+const Employee = require('./lib/Employee');
 
 // TODO: CODE GOES HERE
 const team = [];
@@ -34,11 +35,9 @@ inquirer
     },
 ])
 .then((response) =>{
-    response["role"] = "Manager"
-    team.push(response)
-    console.log(team)
+  const manager = new Manager(response.name, response.id, response.email, response.number);
+  team.push(manager)
     loop();
-
 })
 }
 
@@ -61,6 +60,7 @@ const loop = () => {
         }
         else{
             fs.writeFileSync("./dist/index.html", gen(team));
+           
         }
     })
 
@@ -94,8 +94,7 @@ const engineer = () => {
         },
     ])
     .then((response) =>{
-        response["role"] = "Engineer"
-        team.push(response);
+        
         loop()
     })
 }
@@ -139,3 +138,4 @@ const intern = () =>{
 
 
 init();
+
