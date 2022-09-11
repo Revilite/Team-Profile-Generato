@@ -5,7 +5,7 @@ const generateTeam = team => {
     // create the manager html
     const generateManager = manager => {
         return `<div class="col-3 p-5">
-        <div class="border border-white text-black card-head rounded-top p-3">
+        <div class="border border-white text-white card-head rounded-top p-3">
             <h2>${manager.getName()}</h2>
             <h3>
                 <i class="fas fa-mug-hot mr-2 fs-2"></i> ${manager.getRole()}
@@ -32,7 +32,7 @@ const generateTeam = team => {
     const generateEngineer = engineer => {
         return `
         <div class="col-3 p-5">
-        <div class="border border-white text-black card-head rounded-top p-3">
+        <div class="border border-white text-white card-head rounded-top p-3">
             <h2>${engineer.getName()}</h2>
             <h3>
                 <i class="fas fa-glasses mr-2"></i>${engineer.getRole()}
@@ -57,7 +57,7 @@ const generateTeam = team => {
     const generateIntern = intern => {
         return `
         <div class="col-3 p-5">
-        <div class="border border-white text-black card-head rounded-top p-3">
+        <div class="border border-white text-white card-head rounded-top p-3">
             <h2>${intern.getName()}</h2>
             <h3>
                 <i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}
