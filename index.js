@@ -60,6 +60,7 @@ const loop = () => {
         }
         else{
             fs.writeFileSync("./dist/team.html", gen(team));
+            console.log("team.html has been created");
         }
     })
 
