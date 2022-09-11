@@ -59,7 +59,7 @@ const loop = () => {
             intern();
         }
         else{
-            fs.writeFileSync("./dist/index.html", gen(team));
+            fs.writeFileSync("./dist/team.html", gen(team));
            
         }
     })
