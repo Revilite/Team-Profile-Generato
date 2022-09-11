@@ -25,7 +25,7 @@ inquirer
     },
     {
         type: "input",
-        message: "Whatg is your email address?",
+        message: "What is your email address?",
         name:"email"
     },
     {
