@@ -60,7 +60,6 @@ const loop = () => {
         }
         else{
             fs.writeFileSync("./dist/team.html", gen(team));
-           
         }
     })
 
