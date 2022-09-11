@@ -4,74 +4,73 @@ const generateTeam = team => {
 
     // create the manager html
     const generateManager = manager => {
-        return `
-        <div>
-            <div>
-                <h2>${manager.getName()}</h2>
-                <h3>
-                    <i class="fas fa-mug-hot mr-2"></i> ${manager.getRole()}
-                </h3>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        ID: ${manager.getId()}
-                    </li>
-                    <li>
-                        Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a>
-                    </li>
-                    <li>
-                        Office number: ${manager.getOfficeNumber()}
-                    </li>
-                </ul>
-            </div>
+        return `<div class="col-3 p-5">
+        <div class="border border-white text-black card-head rounded-top p-3">
+            <h2>${manager.getName()}</h2>
+            <h3>
+                <i class="fas fa-mug-hot mr-2 fs-2"></i> ${manager.getRole()}
+            </h3>
         </div>
+        <div class="border border-white custom-bg">
+            <ul>
+                <li class="py-4 fs-4">
+                    ID: ${manager.getId()}
+                </li>
+                <li class="py-4 fs-4">
+                    Email: <a href="mailto:${manager.getEmail()}" class="text-white">${manager.getEmail()}</a>
+                </li>
+                <li class="py-4 fs-4">
+                    Office number: ${manager.getOfficeNumber()}
+                </li>
+            </ul>
+        </div>
+    </div>
         `;
     };
 
     // create the html for engineers
     const generateEngineer = engineer => {
         return `
-        <div>
-            <div>
-                <h2>${engineer.getName()}</h2>
-                <h3>
-                    <i class="fas fa-glasses mr-2"></i>${engineer.getRole()}
-                </h3>
-            </div>
-            <div>
-                <ul>
-                    <li>ID: ${engineer.getId()}</li>
-                    <li>
-                        Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a>
-                    </li>
-                    <li>
-                        GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="col-3 p-5">
+        <div class="border border-white text-black card-head rounded-top p-3">
+            <h2>${engineer.getName()}</h2>
+            <h3>
+                <i class="fas fa-glasses mr-2"></i>${engineer.getRole()}
+            </h3>
         </div>
+        <div class="border border-white custom-bg">
+            <ul>
+                <li class="py-4 fs-4">ID: ${engineer.getId()}</li>
+                <li class="py-4 fs-4">
+                    Email: <a href="mailto:${engineer.getEmail()}" class="text-white">${engineer.getEmail()}</a>
+                </li>
+                <li class="py-4 fs-4">
+                    GitHub: <a href="https://github.com/${engineer.getGithub()}" class= "text-white" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
         `;
     };
 
     // create the html for interns
     const generateIntern = intern => {
         return `
-        <div>
-    <div>
-        <h2>${intern.getName()}</h2>
-        <h3>
-            <i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}
-        </h3>
+        <div class="col-3 p-5">
+        <div class="border border-white text-black card-head rounded-top p-3">
+            <h2>${intern.getName()}</h2>
+            <h3>
+                <i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}
+            </h3>
+        </div>
+        <div class="border border-white custom-bg">
+            <ul>
+                <li class="py-4 fs-4">ID: ${intern.getId()}</li>
+                <li class="py-4 fs-4"><a href="mailto:${intern.getEmail()}" class="text-white">${intern.getEmail()}</a></li>
+                <li class="py-4 fs-4">School: ${intern.getSchool()}</li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <ul>
-            <li>ID: ${intern.getId()}</li>
-            <li>Email: ${intern.getEmail()}</a></li>
-            <li>School: ${intern.getSchool()}</li>
-        </ul>
-    </div>
-</div>
         `;
     };
 
@@ -99,24 +98,29 @@ const generateTeam = team => {
 // export function to generate entire page
 module.exports = team => {
 
-    return `<!DOCTYPE html>
+return `<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>My Team</title>
-        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+
     </head>
     <body>
         <header>
-            <h1>My Team</h1>
+            <h1 class="text-white d-flex justify-content-center p-5 custom-bg fw-bold fs-1">My Team</h1>
         </header>
-        <main>
-            ${generateTeam(team)}
+        <main class="text-white row d-flex justify-content-center">
+        ${generateTeam(team)}
         </main>
     </body>
 </html>
+
     `;
+
+    // ${generateTeam(team)}
 };
