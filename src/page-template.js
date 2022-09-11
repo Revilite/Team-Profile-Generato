@@ -67,7 +67,7 @@ const generateTeam = team => {
     <div>
         <ul>
             <li>ID: ${intern.getId()}</li>
-            <li>${intern.getEmail()}</a></li>
+            <li>Email: ${intern.getEmail()}</a></li>
             <li>School: ${intern.getSchool()}</li>
         </ul>
     </div>

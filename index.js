@@ -94,7 +94,8 @@ const engineer = () => {
         },
     ])
     .then((response) =>{
-        
+        const engineer = new Engineer(response.name, response.id, response.email, response.github)
+        team.push(engineer);
         loop()
     })
 }
@@ -125,8 +126,8 @@ const intern = () =>{
 
     ])
     .then((response) =>{
-        response["role"] = "Intern"
-        team.push(response);
+        const intern = new Intern(response.name, response.id, response.email, response.school)
+        team.push(intern);
         loop();
     })
 }
