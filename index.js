@@ -6,10 +6,10 @@ const fs = require("fs");
 const gen = require("./src/page-template.js");
 
 // TODO: CODE GOES HERE
+const team = [];
+
 
 const init = ()=> {
-
-
 inquirer
 .prompt([
     {
@@ -34,7 +34,11 @@ inquirer
     },
 ])
 .then((response) =>{
+    response["role"] = "Manager"
+    team.push(response)
+    console.log(team)
     loop();
+
 })
 }
 
@@ -56,7 +60,7 @@ const loop = () => {
             intern();
         }
         else{
-            console.log("file has been made");
+            fs.writeFileSync("./dist/index.html", gen(team));
         }
     })
 
@@ -90,7 +94,8 @@ const engineer = () => {
         },
     ])
     .then((response) =>{
-        console.log(response);
+        response["role"] = "Engineer"
+        team.push(response);
         loop()
     })
 }
@@ -121,7 +126,8 @@ const intern = () =>{
 
     ])
     .then((response) =>{
-        console.log(response);
+        response["role"] = "Intern"
+        team.push(response);
         loop();
     })
 }
