@@ -13,3 +13,4 @@ This application is a team building application that creates a html page that in
 ## Visuals
 
 ![ScreenShot of website](./readme_images/readME_image.png)
+[Video of Tests](https://drive.google.com/file/d/1-qhAB0jbpQMlg8t8ib9wQjFUAYi_Rl7u/view?usp=sharing)
